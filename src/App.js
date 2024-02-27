@@ -1,25 +1,52 @@
-import logo from './logo.svg';
+import React from 'react';
+import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
 import './App.css';
+import HomePage from './components/HomePage';
+import AboutPage from './components/About';
+import ContactPage from './components/Contact';
+import ExampleComponent from './components/ExampleComponent';
 
-function App() {
+function MainRouter() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className='MainRouter'>
+        <Navigation />
+        <Routs />
+      </div>
+    </Router>
+  )
+}
+
+function Navigation() {
+  return (
+    <nav>
+      <ul>
+        <li>
+          <Link to="/">Início</Link>
+        </li>
+        <li>
+          <Link to="/sobre">Sobre</Link>
+        </li>
+        <li>
+          <Link to="/contato">Contato</Link>
+        </li>
+        <li>
+          <Link to="/example">ExampleRequest</Link>
+        </li>
+      </ul>
+    </nav>
+  )
+}
+
+function Routs(){
+  return (
+    <Routes>
+      <Route exact path="/sobre" element={<AboutPage />} />
+      <Route exact path='/contato' element={<ContactPage />} />
+      <Route exact path='/' element={<HomePage />} />
+      <Route exact path='/example' element={<ExampleComponent/>} />
+    </Routes>
   );
 }
 
-export default App;
+export default MainRouter;
