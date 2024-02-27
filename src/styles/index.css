@@ -39,13 +39,13 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #fff;
+  color: black;
   text-decoration: none;
   padding: 10px 20px;
 }
 
 nav ul li a:hover {
-  background-color: #555;
+  background-color: red;
 }
 
 h1,

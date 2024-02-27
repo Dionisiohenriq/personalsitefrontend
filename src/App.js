@@ -1,6 +1,7 @@
+import './styles/App.css';
+import Button from './components/Button';
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
-import './App.css';
 import HomePage from './components/HomePage';
 import AboutPage from './components/About';
 import ContactPage from './components/Contact';
@@ -33,9 +34,12 @@ function Navigation() {
         <li>
           <Link to="/example">ExampleRequest</Link>
         </li>
+        <li>
+          <Button>Teste</Button>
+        </li>
       </ul>
     </nav>
-  )
+  );
 }
 
 function Routs(){
